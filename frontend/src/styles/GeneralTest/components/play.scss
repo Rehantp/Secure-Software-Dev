@@ -1,0 +1,88 @@
+.questions {
+  background-color: #ffffff;
+  border-left: 5px solid blue;
+  width: 99%;
+  margin: 3rem 0 auto;
+  padding: 3rem 3rem 3rem 3rem;
+
+  h2 {
+    text-align: center;
+    font-weight: lighter;
+  }
+
+  h5 {
+    font-size: 1.52rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .options-container {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .option {
+    background-color: #000000;
+    border-radius: 30px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: background-color 0.3s linear, color 0.3s linear,
+      border-radius 0.3s linear;
+    text-align: center;
+    width: 90%;
+  }
+
+  .option:hover {
+    background-color: darken(#9a9af5, 10%);
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    width: 80%;
+  }
+}
+
+.button-container button {
+  border: none;
+  color: #fafafa;
+  cursor: pointer;
+  margin-right: 2rem;
+  padding: 1rem;
+  border-radius: 21px;
+}
+
+.button-container button:first-child {
+  background-color: darken(#9a9af5, 10%);
+  box-shadow: 0 0 10px #9a9af5;
+  transition: 0.2s linear all;
+}
+.button-container button:first-child:hover {
+  background-color: #3bb0ff;
+  box-shadow: 0 0 10px #070808;
+  transition: 0.2s linear all;
+}
+
+.button-container button:nth-child(2) {
+  background-color: darken(#218f00, 10%);
+  box-shadow: 0 0 10px #50a15c;
+  transition: 0.2s linear all;
+}
+.button-container button:nth-child(2):hover {
+  background-color: #50a15c;
+  box-shadow: 0 0 10px#70e84d;
+  transition: 0.2s linear all;
+}
+
+.button-container button:last-child {
+  background-color: darken(#d90254, 10%);
+  box-shadow: 0 0 10px #9c023d;
+  transition: 0.2s linear all;
+}
+.button-container button:last-child:hover {
+  background-color: #fc146d;
+  box-shadow: 0 0 10px#fc146d;
+}

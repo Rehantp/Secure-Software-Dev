@@ -1,0 +1,23 @@
+.instructions-container {
+  border: 1px solid darken($color: #000005, $amount: 10%);
+  border-radius: 5px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 4rem;
+
+  .h1 {
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .browser-default {
+    padding-left: 2rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .Right {
+    padding: left 300px;
+  }
+}

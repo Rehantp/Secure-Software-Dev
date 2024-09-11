@@ -1,0 +1,151 @@
+[
+  {
+    "question": "What is Number You See?",
+    "optionA": "71",
+    "optionB": "70",
+    "optionC": "74",
+    "optionD": "None of the above",
+    "answer": "74",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/Ishihara_9.svg.png"
+  },
+
+  {
+    "question": "What is Number You See?",
+    "optionA": "20",
+    "optionB": "45",
+    "optionC": "44",
+    "optionD": "None of the above",
+    "answer": "45",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/45.jpg"
+  },
+
+  {
+    "question": "What is Number You See?",
+    "optionA": "11",
+    "optionB": "14",
+    "optionC": "10",
+    "optionD": "12",
+    "answer": "12",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/12.jpg"
+  },
+
+  {
+    "question": "What is Number You See?",
+    "optionA": "7",
+    "optionB": "5",
+    "optionC": "55",
+    "optionD": "70",
+    "answer": "5",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/5.jpg"
+  },
+
+  {
+    "question": "What is Number You See?",
+    "optionA": "87",
+    "optionB": "91",
+    "optionC": "97",
+    "optionD": "81",
+    "answer": "97",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/97.jpg"
+  },
+
+  {
+    "question": "What is Number You See?",
+    "optionA": "8",
+    "optionB": "9",
+    "optionC": "0",
+    "optionD": "6",
+    "answer": "6",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/6.webp"
+  },
+
+  {
+    "question": "Observe the lines with each eye carefully",
+    "optionA": "Each Lines are balck and diffrent thikness",
+    "optionB": "Each Lines are balck and same thikness",
+    "optionC": "Some Lines are grey and same thikness",
+    "optionD": "Ecach Lines are grey and diffrent thikness",
+    "answer": "Each Lines are balck and same thikness",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/asm.webp"
+  },
+
+  {
+    "question": "Observe the lines with each eye carefully",
+    "optionA": "Each Lines are balck and diffrent thikness",
+    "optionB": "Each Lines are balck and same thikness",
+    "optionC": "Some Lines are grey and same thikness",
+    "optionD": "Ecach Lines are grey and diffrent thikness",
+    "answer": "Each Lines are balck and same thikness",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/asm.webp"
+  },
+
+  {
+    "question": "Are all the radiating heavy black line of the same intensity and thickness?",
+    "optionA": "Grey and same thikness",
+    "optionB": "YES",
+    "optionC": "NO",
+    "optionD": "Not Clear",
+    "answer": "YES",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/asd3.gif"
+  },
+
+  {
+    "question": "Cover left eye with your left hand and look closely at the image, then repeat with the right eye.",
+    "optionA": "All lines are clear for both eyes",
+    "optionB": "Some lines are clear for both eyes",
+    "optionC": "Some lines are clear for both eyes",
+    "optionD": "Some lines are clear for both eyes",
+    "answer": "All lines are clear for both eyes",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/astigmatism-quiz.svg"
+  },
+
+  {
+    "question": "What are the letters in line 8 (Please keep minimum distance of 1 meter from the screen)",
+    "optionA": "D E F P O T E C",
+    "optionB": "L E F P O T E C",
+    "optionC": "F E F P O T E C",
+    "optionD": "P E F P O T E C",
+    "answer": "D E F P O T E C",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/online-eye-test-inlineimage1.jpg"
+  },
+
+  {
+    "question": "What are the letters in line 6 (Please keep minimum distance of 1 meter from the screen)",
+    "optionA": "E O F C 2 P",
+    "optionB": "E O E C Z P",
+    "optionC": "E D F C Z P",
+    "optionD": "E D E C Z P",
+    "answer": "E D F C Z P",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/blurry.png"
+  },
+
+  {
+    "question": "What are the letters in line 7 (Please keep minimum distance of 1 meter from the screen)",
+    "optionA": "F F L P Z 2 D",
+    "optionB": "F E L O P Z D",
+    "optionC": "E F I P Z 7 D",
+    "optionD": "F E L O 2 2 O",
+    "answer": "F E L O P Z D",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/blurry.png"
+  },
+
+  {
+    "question": "What are the letters in line 8 (Please keep minimum distance of 1 meter from the screen)",
+    "optionA": "D E F P O T E C",
+    "optionB": "O E F P O T E C",
+    "optionC": "D F E P O T E C",
+    "optionD": "O F F P O T E C",
+    "answer": "D E F P O T E C",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/blurry.png"
+  },
+
+  {
+    "question": "What are the letters in line 4 (Please keep minimum distance of 1 meter from the screen)",
+    "optionA": "2 0 A N",
+    "optionB": "Z 0 N A",
+    "optionC": "Z O K N",
+    "optionD": "2 0 A N",
+    "answer": "Z O K N",
+    "image": "https://flexfitness-coach-img.s3.amazonaws.com/main-qimg-c8461c253c7a7647584392548235127f-lq.jpg"
+  }
+]

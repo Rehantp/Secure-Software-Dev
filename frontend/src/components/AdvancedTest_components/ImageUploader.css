@@ -1,0 +1,19 @@
+.card {
+  padding: 20px;
+  margin: 100px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2); /* Increase the shadow effect */
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.3); /* Increase the shadow effect on hover */
+}
+
+.image-preview {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,125 @@
+/* Example: Linear Gradient */
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.custom-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(14, 63, 128, 0.888),
+    rgba(36, 182, 222, 0.957)
+  );
+  width: 500px;
+  border-radius: 10px;
+  padding: 30px;
+  align-items: center;
+  box-shadow: 0px 0px 10px 0px #5c5959;
+}
+.form-conrol {
+  width: 75% !important;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+.btn-update {
+  color: aliceblue;
+  background-color: rgb(26, 190, 11);
+  width: 180px;
+  margin-left: 140px;
+  box-shadow: 0px 0px 10px 0px #000;
+  font-weight: bolder;
+}
+
+.btn-update:hover {
+  background-color: rgb(7, 135, 16);
+  box-shadow: 0px 0px 10px 0px #000;
+  color: aliceblue;
+}
+
+.text {
+  margin-left: 50px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header {
+  font-size: 40px;
+  color: white;
+  margin-left: 110px;
+}
+
+/* ----------------------------------------admin page------------------------------------------------------------- */
+.table-container {
+  box-shadow: 2px 2px 5px 2px #9a9898;
+  justify-content: center;
+  align-items: center;
+  width: 1300px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.header-admin {
+  font-family: "Roboto Mono", monospace;
+  /* color:#1b51d8; */
+  color: #1f6e8c;
+  text-shadow: #5c5959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500px;
+  font-size: 50px;
+}
+
+.table-header-admin {
+  font-size: 24px;
+  /* font-family: "Roboto Mono", monospace; */
+  margin-left: 20px;
+}
+
+.btn-add {
+  color: aliceblue;
+  background-color: #1f6e8c;
+  /* background-color: #0E2954; */
+  /* background-color: rgb(11, 109, 190); */
+  width: 120px;
+  font-weight: bolder;
+}
+
+.btn-add:hover {
+  color: aliceblue;
+
+  background-color: rgb(11, 38, 190);
+  box-shadow: 0px 0px 2px 0px #000;
+}
+
+.btn-success {
+  margin: 3px;
+  width: 80px;
+}
+.btn-success:hover {
+  color: aliceblue;
+  background-color: rgb(51, 155, 17);
+  box-shadow: 0px 0px 2px 0px #000;
+  outline: none !important;
+}
+.btn-danger {
+  margin: 3px;
+  width: 80px;
+}
+
+.btn-danger:hover {
+  color: aliceblue;
+  background-color: rgb(255, 4, 4);
+  box-shadow: 0px 0px 2px 0px #000;
+}
+
+.table-data-admin {
+  font-size: medium;
+}
