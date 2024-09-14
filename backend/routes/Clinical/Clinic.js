@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Clinics = require("../../models/ClinicsModel");
 const { body, validationResult } = require("express-validator");
-
+const rateLimit = require("express-rate-limit");
 const router = express.Router();
 
 // create ~ http://localhost:4000/api/Clinics/newClinic
@@ -146,10 +146,23 @@ router.route("/delete/:id").delete(async (req, res) => {
     });
 });
 
-router.route("/getAll").get(async (req, res) => {
-  const clinic = await Clinics.find({}).sort({ createdAt: -1 });
+// Set up rate limiter: maximum of 100 requests per 15 minutes
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again after 15 minutes.",
+});
 
-  res.status(200).json(clinic);
+// Apply the rate limiter to all routes in this router
+router.use(limiter);
+
+router.route("/getAll").get(async (req, res) => {
+  try {
+    const clinic = await Clinics.find({}).sort({ createdAt: -1 });
+    res.status(200).json(clinic);
+  } catch (err) {
+    res.status(500).json({ error: "Server error, try again later." });
+  }
 });
 
 module.exports = router;
