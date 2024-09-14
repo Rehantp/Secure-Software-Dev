@@ -51,7 +51,16 @@ router.route("/getClinic/:id").get((req, res) => {
 });
 
 // update ~ http://localhost:4000/api/Clinics/getClinic/id
+const updateClinicLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes window
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message:
+    "Too many update attempts from this IP, please try again after 15 minutes",
+});
+
+// Apply rate limiter to the clinic update route
 router.route("/updateClinic/:id").put(
+  updateClinicLimiter, // Add rate limiting middleware here
   [
     // Input validation and sanitization
     body("clinicName")
@@ -147,9 +156,10 @@ router.route("/delete/:id").delete(async (req, res) => {
 });
 
 // Set up rate limiter: maximum of 100 requests per 15 minutes
+
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: "Too many requests from this IP, please try again after 15 minutes.",
 });
 
