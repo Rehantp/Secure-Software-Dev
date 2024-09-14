@@ -30,8 +30,13 @@ router.route("/createClinic").post((req, res) => {
     });
 });
 
+const limitergetClinic = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: "Too many requests from this IP, please try again after 15 minutes.",
+});
 // read ~ http://localhost:4000/api/Clinics/admin
-router.route("/admin").get((req, res) => {
+router.route("/admin").get(limitergetClinic, (req, res) => {
   // Fetch all Clinics with proper error handling
   Clinics.find()
     .then((clinicData) => {
@@ -43,17 +48,20 @@ router.route("/admin").get((req, res) => {
     });
 });
 
-router.route("/getClinic/:id").get((req, res) => {
+// Apply rate limiter to the /getClinic/:id route
+router.get("/getClinic/:id", limitergetClinic, (req, res) => {
   const id = req.params.id;
   Clinics.findById({ _id: id })
     .then((clinicData) => res.json(clinicData))
-    .catch((err) => res.json(err));
+    .catch((err) =>
+      res.status(500).json({ error: "Server error, try again later." })
+    );
 });
 
 // update ~ http://localhost:4000/api/Clinics/getClinic/id
 const updateClinicLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes window
-  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message:
     "Too many update attempts from this IP, please try again after 15 minutes",
 });
