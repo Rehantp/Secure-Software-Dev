@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Clinics = require("../../models/ClinicsModel");
+const { body, validationResult } = require("express-validator");
+
 const router = express.Router();
 
 // create ~ http://localhost:4000/api/Clinics/newClinic
@@ -49,36 +51,78 @@ router.route("/getClinic/:id").get((req, res) => {
 });
 
 // update ~ http://localhost:4000/api/Clinics/getClinic/id
-router.route("/updateClinic/:id").put(async (req, res) => {
-  const id = req.params.id;
+router.route("/updateClinic/:id").put(
+  [
+    // Input validation and sanitization
+    body("clinicName")
+      .trim()
+      .notEmpty()
+      .withMessage("Clinic name is required")
+      .isLength({ max: 100 })
+      .withMessage("Clinic name must not exceed 100 characters"),
+    body("clinicLocation")
+      .trim()
+      .notEmpty()
+      .withMessage("Clinic location is required")
+      .isLength({ max: 200 })
+      .withMessage("Clinic location must not exceed 200 characters"),
+    body("clinicContact")
+      .trim()
+      .isMobilePhone()
+      .withMessage("Invalid clinic contact number"),
+    body("clinicWebsite")
+      .optional()
+      .trim()
+      .isURL()
+      .withMessage("Invalid clinic website URL"),
+  ],
+  async (req, res) => {
+    // Check for validation errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  // Validate the provided ID
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ error: "Invalid Clinic ID" });
-  }
+    const clinicId = req.params.id;
+    const { clinicName, clinicLocation, clinicContact, clinicWebsite } =
+      req.body;
 
-  // Use $eq operator to mitigate NoSQL injection
-  Clinics.findOneAndUpdate(
-    { _id: { $eq: id } }, // This ensures the _id is matched exactly
-    {
-      clinicName: req.body.clinicName,
-      clinicLocation: req.body.clinicLocation,
-      clinicContact: req.body.clinicContact,
-      clinicWebsite: req.body.clinicWebsite,
-    },
-    { new: true } // To return the updated document
-  )
-    .then((clinicData) => {
-      if (!clinicData) {
+    try {
+      // Ensure that the ID is a valid MongoDB ObjectId to prevent malformed queries
+      if (!mongoose.Types.ObjectId.isValid(clinicId)) {
+        return res.status(400).json({ error: "Invalid Clinic ID" });
+      }
+
+      // Use $eq operator to prevent NoSQL injection by matching the _id exactly
+      const updatedClinic = await Clinics.findOneAndUpdate(
+        { _id: { $eq: clinicId } },
+        {
+          clinicName,
+          clinicLocation,
+          clinicContact,
+          clinicWebsite,
+        },
+        { new: true } // To return the updated document
+      );
+
+      if (!updatedClinic) {
         return res.status(404).json({ error: "Clinic not found" });
       }
-      res.json(clinicData);
-    })
-    .catch((err) => {
-      console.error("Update Error:", err); // Log the error for debugging
-      res.status(500).json({ error: "Error updating Clinic" });
-    });
-});
+
+      // Return the updated clinic data
+      res.status(200).json({
+        message: "Clinic updated successfully",
+        clinic: updatedClinic,
+      });
+    } catch (err) {
+      // Log error for internal purposes and return a generic error message
+      console.error("Error updating clinic:", err);
+      res
+        .status(500)
+        .json({ error: "An error occurred while updating the clinic" });
+    }
+  }
+);
 
 //delete ~ http://localhost:4000/api/Clinics/delete/id
 router.route("/delete/:id").delete(async (req, res) => {
