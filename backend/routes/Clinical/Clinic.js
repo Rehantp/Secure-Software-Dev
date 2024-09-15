@@ -142,7 +142,7 @@ router.route("/updateClinic/:id").put(
 );
 
 //delete ~ http://localhost:4000/api/Clinics/delete/id
-router.route("/delete/:id").delete(async (req, res) => {
+router.route("/delete/:id").delete(updateClinicLimiter, async (req, res) => {
   let ClinicID = req.params.id;
 
   // Validate the provided ID
