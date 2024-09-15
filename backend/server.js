@@ -21,9 +21,10 @@ const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method);
+  console.log("Request path: %s, Request method: %s", req.path, req.method);
   next();
 });
+
 app.use(bodyParser.json());
 app.use(cors());
 
